@@ -42,6 +42,13 @@ android {
 }
 
 dependencies {
+    // Navigation component
+    implementation(libs.androidx.navigation.compose)
+
+    // ViewModel and LiveData
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.compose.runtime.livedata)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
