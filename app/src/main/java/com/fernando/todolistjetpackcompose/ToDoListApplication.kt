@@ -1,6 +1,7 @@
 package com.fernando.todolistjetpackcompose
 
 import android.app.Application
+import com.fernando.todolistjetpackcompose.repositories.repositoryModule
 import com.fernando.todolistjetpackcompose.room.roomModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -13,7 +14,8 @@ class ToDoListApplication : Application() {
             androidLogger()
             androidContext(this@ToDoListApplication)
             modules(
-                roomModule
+                roomModule,
+                repositoryModule
             )
         }
     }

@@ -2,7 +2,6 @@ package com.fernando.todolistjetpackcompose.room.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import java.util.UUID
 
@@ -13,9 +12,10 @@ data class Task(
     @ColumnInfo(name = "task_id")
     var id: String = UUID.randomUUID().toString(),
 
-    @ColumnInfo
-    val title: String = "",
+    val title: String,
 
-    @ColumnInfo
-    val description: String = ""
+    val description: String,
+
+    @ColumnInfo(name = "is_finish")
+    val isFinish: Boolean
 )

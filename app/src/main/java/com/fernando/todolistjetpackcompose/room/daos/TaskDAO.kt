@@ -14,7 +14,7 @@ interface TaskDAO {
     suspend fun findAll() : List<Task>
 
     @Query("SELECT * FROM tasks WHERE task_id LIKE :taskID")
-    fun findById(taskID: String)
+    fun findById(taskID: String) : Task?
 
     @Query("DELETE FROM tasks WHERE task_id LIKE :taskID")
     suspend fun deleteTaskByID(taskID: String)
@@ -24,4 +24,7 @@ interface TaskDAO {
 
     @Query("DELETE FROM tasks WHERE task_id IN (:ids)")
     suspend fun deleteByIds(ids: List<String>)
+
+    @Query("UPDATE tasks SET is_finish = 1 WHERE task_id = :taskID")
+    suspend fun updateTaskToFinish(taskID: String)
 }
