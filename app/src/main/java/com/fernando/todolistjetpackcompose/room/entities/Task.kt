@@ -17,5 +17,5 @@ data class Task(
     val description: String,
 
     @ColumnInfo(name = "is_finish")
-    val isFinish: Boolean
+    val isFinish: Boolean = true
 )
